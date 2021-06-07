@@ -1,1 +1,9 @@
-asf
+text = """Celý zápas seděl na střídačce. Tři třetiny, pět minut prodloužení i čtyři série nájezdů. Ale pak to byl on, kdo na ledě zvedl vítězně ruce nad hlavu. Úspěšný zákrok (a záskok) brankáře Romana Willa v penaltovém rozstřelu definitivně zajistil českým hokejistům na mistrovství světa dva body proti Dánsku."""
+texty = text.split(".")[:-1]
+
+slovnik = {}
+for index, veta in enumerate(texty):
+  slovnik[f"clanek_cilo_{index}"] = {"titulek": veta, "pocet_slov" : len(veta.split()), 
+                                     "pocty_jednotlivych_pismen": { znak : list(veta).count(znak) for znak in string.ascii_lowercase}, 
+                                     "jednotliva_slova" : veta.split()
+                                    }
